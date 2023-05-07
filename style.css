@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e9e9e9;
+}
+.project{
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* sowhImage */
+.showImage{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 50%);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    transition:all 0.3s;
+}
+.showImage img{
+    width: 700px;
+    height: 600px;
+    border: 15px solid white;
+    transition: all 5s ease;
+}
+.showImage .hide {
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+.showImage .hide span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: #f44336;
+    margin:  10px 0;
+}
+.showImage .hide span:first-child{
+    transform: translate(21px ,10px) rotate(45deg) ;
+}
+.showImage .hide span:last-child{
+    transform: translate(19px ,-4px) rotate(-45deg) ;
+}
+
+
+/* Head */
+
+.project .head {
+    margin: 150px auto 70px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap:35px;
+}
+.project .head .btn {
+margin: 10px 0;
+color: #008dfe;
+font-size: 18px;
+letter-spacing: 0.5px;
+border:  2px solid #008dfe;
+padding: 7px 15px;
+border-radius:30px;
+transition: 0.3s;
+cursor: pointer;
+}
+.active {
+    background-color: #008dfe;
+    color: white !important;
+}
+
+.project .head .btn:hover{
+background-color: #008dfe;
+color: white;
+}
+
+/* galary */
+
+.galary {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px ;
+    width: 80%;
+    transform: translateX(50px);
+}
+.galary .image{
+    flex:  0 1 170px;
+    width: 200px;
+    height: 180px;
+    cursor: pointer;
+}
+
+@media (min-width:300px) and (max-width:767px) {
+    .project .head {
+        column-gap: 20px;
+        width: 100%;
+    }
+    .project .head .btn {
+    padding: 7px 15px;
+     margin:  20px auto;
+    flex:  0 1 auto;
+    text-align: center;
+    }
+    .galary {
+        gap: 10px;
+        width: 100%;
+        transform: translateX(0);
+    }
+    .galary .image{
+        margin:  0 auto;
+    }
+    .showImage img{
+        width: 340px;
+        height: 400px;
+    }
+    .showImage .hide {
+        cursor: pointer;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 70px;
+        right: 0px;
+    }
+
+}
